@@ -27,7 +27,8 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["babel__generator"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "build", "dist"]
