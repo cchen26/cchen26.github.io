@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "./src/index.js"),
+    bundle: path.resolve(__dirname, "./src/index.tsx"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -33,16 +33,6 @@ module.exports = {
           loader: "ts-loader",
           options: {
             transpileOnly: true,
-          },
-        },
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
           },
         },
       },
