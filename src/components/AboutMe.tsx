@@ -1,5 +1,5 @@
 import React from "react";
-import "/styles/AboutMe.scss";
+import "../styles/AboutMe.scss";
 import { Email } from "react-obfuscate-email";
 
 const AboutMe: React.FC = () => {
