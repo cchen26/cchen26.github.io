@@ -28,7 +28,7 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "skipLibCheck": true,
-    "types": ["babel__generator"]
+    "types": ["babel__generator", "node"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "build", "dist"]

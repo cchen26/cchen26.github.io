@@ -1,0 +1,42 @@
+$glider-height: 2.3rem;
+$glider-width: 8rem;
+
+#navigation {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 2rem;
+  z-index: 100;
+
+  > nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    > a {
+      transition: color 300ms ease;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      :hover {
+        color: var(--intro-links-hover);
+      }
+
+      > i {
+        font-size: 1.4rem;
+        color: white;
+      }
+    }
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 90px;
+      margin: auto;
+      margin-top: 1.25rem;
+      background-color: white;
+    }
+  }
+}

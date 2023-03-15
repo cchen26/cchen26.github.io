@@ -1,11 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { DefinePlugin } = require("webpack");
 
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "./src/index.tsx"),
+    bundle: path.resolve(__dirname, "src/index.tsx"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -37,7 +38,7 @@ module.exports = {
         },
       },
       {
-        test: /\.s?css$/,
+        test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
@@ -56,6 +57,9 @@ module.exports = {
       filename: "index.html",
       favicon: "public/favicon.ico",
       template: "public/index.html",
+    }),
+    new DefinePlugin({
+      "process.env": JSON.stringify(process.env),
     }),
   ],
 };

@@ -1,0 +1,15 @@
+{
+  "firstName": "Chao",
+  "lastName": "Chen",
+  "message": "Junior Software Engineer",
+  "icons": [
+    {
+      "image": "fa-github",
+      "url": "https://github.com/cchen26"
+    },
+    {
+      "image": "fa-linkedin",
+      "url": "https://www.linkedin.com/in/chaochen26/"
+    }
+  ]
+}

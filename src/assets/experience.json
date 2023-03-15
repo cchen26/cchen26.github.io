@@ -1,0 +1,23 @@
+{
+  "heading": "Experience",
+  "data": [
+    {
+      "company": "Fake Company 1",
+      "role": "SWE",
+      "date": "Now - Never",
+      "description": ["item 1", "item 2", "item 3"]
+    },
+    {
+      "company": "Fake Company 2",
+      "role": "ABC",
+      "date": "Now - Never",
+      "description": ["item 1", "item 2", "item 3"]
+    },
+    {
+      "company": "Fake Company 3",
+      "role": "SWE",
+      "date": "Now - Never",
+      "description": ["item 1", "item 2", "item 3"]
+    }
+  ]
+}

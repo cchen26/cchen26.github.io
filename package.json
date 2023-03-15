@@ -1,5 +1,5 @@
 {
-  "homepage": "http://cchen26.github.io",
+  "homepage": "localhost:3000",
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Web resume",
@@ -14,13 +14,22 @@
   "license": "ISC",
   "dependencies": {
     "@babel/generator": "^7.21.1",
-    "buffer": "^6.0.3",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.12",
+    "axios": "^1.3.4",
+    "bootstrap": "^5.2.3",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
-    "react-obfuscate-email": "^1.1.1"
+    "react-loading-skeleton": "^3.2.0",
+    "react-router-dom": "^6.9.0",
+    "react-tabs": "^6.0.0",
+    "react-typist-component": "^1.0.5"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",
+    "@types/node": "^18.15.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "clean-webpack-plugin": "^4.0.0",
