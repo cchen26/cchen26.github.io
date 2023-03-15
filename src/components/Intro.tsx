@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Typist from "react-typist-component";
+
 interface Props {
   name: string;
   message: string;
