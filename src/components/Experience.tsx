@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
@@ -18,43 +17,6 @@ interface ExperienceProps {
   experienceList: ExperienceData[];
 }
 
-function TabPanel(props: {
-  children?: React.ReactNode;
-  value: number;
-  index: number;
-}) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 4 }}>
-          <Typography component={"div"}>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index: number) {
-  return {
-    id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`,
-  };
-}
-
 function Experience({ heading, experienceList }: ExperienceProps) {
   const [value, setValue] = useState(0);
 
@@ -63,7 +25,7 @@ function Experience({ heading, experienceList }: ExperienceProps) {
   };
 
   return (
-    <div id="experience" className="bg-white m-0">
+    <div id="experience" className="experience-bg m-0">
       <div className="container py-5">
         <h2
           className="display-4 mb-5 text-center"
@@ -83,6 +45,7 @@ function Experience({ heading, experienceList }: ExperienceProps) {
               bgcolor: "background.paper",
               display: "flex",
               flexDirection: "row",
+              backgroundColor: "#111630",
             }}
           >
             <Tabs
@@ -96,25 +59,50 @@ function Experience({ heading, experienceList }: ExperienceProps) {
             >
               {experienceList.map((data, index) => {
                 return (
-                  <Tab label={data.company} {...a11yProps(index)} key={index} />
+                  <Tab
+                    label={data.company}
+                    id={`vertical-tab-${index}`}
+                    aria-controls={`vertical-tabpanel-${index}`}
+                    key={index}
+                    style={{ color: "#dca652" }}
+                  />
                 );
               })}
             </Tabs>
             {experienceList.map((data, index) => {
               return (
-                <TabPanel value={value} index={index} key={index}>
-                  <div style={{ fontSize: "20px", marginBottom: "2px" }}>
-                    <strong>{data.company}</strong> - {data.role}
+                value === index && (
+                  <div
+                    role="tabpanel"
+                    hidden={value !== index}
+                    id={`vertical-tabpanel-${index}`}
+                    aria-labelledby={`vertical-tab-${index}`}
+                    key={index}
+                    style={{ color: "#fff", marginLeft: "10px" }}
+                  >
+                    {value === index && (
+                      <Box sx={{ p: 4 }}>
+                        <Typography>
+                          <div
+                            style={{ fontSize: "20px", marginBottom: "2px" }}
+                          >
+                            <strong>{data.company}</strong> - {data.role}
+                          </div>
+                          <div
+                            style={{ fontSize: "14px", marginBottom: "13px" }}
+                          >
+                            {data.date}
+                          </div>
+                          <ul>
+                            {data.description.map((data, index) => (
+                              <li key={index}>{data}</li>
+                            ))}
+                          </ul>
+                        </Typography>
+                      </Box>
+                    )}
                   </div>
-                  <div style={{ fontSize: "14px", marginBottom: "13px" }}>
-                    {data.date}
-                  </div>
-                  <ul>
-                    {data.description.map((data, index) => (
-                      <li key={index}>{data}</li>
-                    ))}
-                  </ul>
-                </TabPanel>
+                )
               );
             })}
           </Box>

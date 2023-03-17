@@ -29,19 +29,6 @@ code {
   background-color: 111630ff;
 }
 
-.brand {
-  color: #363636 !important;
-}
-
-.toggler {
-  border: none;
-  padding: 4px;
-  border-radius: 4px;
-  &:focus {
-    outline: none;
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-}
 .socialicons {
   color: white;
   padding-left: 5px;
@@ -90,4 +77,85 @@ code {
 .skills-tab {
   flex-grow: 1;
   text-align: center;
+}
+
+.container.py-5 h2 {
+  color: white;
+}
+
+//background color for each component
+.skills-bg {
+  background-color: #111630;
+}
+
+.experience-bg {
+  background-color: #111630;
+}
+
+.projects-bg {
+  background-color: #111630;
+}
+
+.about-me-bg {
+  background-color: #111630;
+}
+
+//text under each image
+.skill-text {
+  color: #dca652;
+}
+
+//non-active tabs
+.skills-tab.lead {
+  background-color: #111630;
+  color: white;
+}
+
+//active tab
+.skills-tab.lead.nav-link.active {
+  background-color: #111630;
+  color: white;
+}
+
+//about me
+.lead.text-center {
+  color: white;
+}
+
+.project-card-bg {
+  background-color: #111630;
+}
+
+h5.card-title {
+  color: white;
+}
+
+.pb-3 {
+  color: white;
+}
+
+// .bg-language-percent {
+//   background-color: #111630;
+//   color: pink;
+// }
+
+.badge {
+  background-color: #111630;
+  color: #dca652;
+}
+
+.project-card-line {
+  color: white;
+}
+
+.stars {
+  color: white;
+}
+
+.project-card-updated {
+  color: white;
+}
+
+.btn.btn-outline-secondary.mx-2 {
+  color: white;
 }

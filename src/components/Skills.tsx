@@ -26,7 +26,7 @@ const Skills = React.forwardRef(
       skillsTabRef
     );
     return (
-      <div ref={skillsTabRef} className="bg-white m-0" id="skills">
+      <div ref={skillsTabRef} className="skills-bg m-0" id="skills">
         <div className="container py-5">
           <Container className="p-5 ">
             <h2

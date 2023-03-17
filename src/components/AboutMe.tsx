@@ -8,7 +8,7 @@ type AboutMeProps = {
 
 const AboutMe: React.FC<AboutMeProps> = ({ heading, message, email }) => {
   return (
-    <div id="about-me" className="m-0">
+    <div id="about-me" className="about-me-bg m-0">
       <div className="container py-5">
         <div className="container row">
           <div className="col-5 d-none d-lg-block align-self-center"></div>
@@ -26,8 +26,8 @@ const AboutMe: React.FC<AboutMeProps> = ({ heading, message, email }) => {
                 className="btn btn-outline-dark btn-lg"
                 aria-label="Contact"
               >
-                <i className="fas fa-envelope"></i>
-                <span>&nbsp; Contact Me</span>
+                <i className="fas fa-envelope" style={{ color: "white" }}></i>
+                <span style={{ color: "white" }}>&nbsp; Contact Me</span>
               </a>
             </div>
           </div>

@@ -13,7 +13,7 @@ const Intro = React.forwardRef<HTMLDivElement, Props>(
       <div
         id="intro"
         style={{
-          background: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("https://images.unsplash.com/photo-1587186311970-9ceba950f179?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8")`,
+          background: `url("https://images.unsplash.com/photo-1587186311970-9ceba950f179?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8")`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           filter: "brightness(80%)",

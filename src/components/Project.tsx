@@ -53,7 +53,7 @@ const Project = ({ heading, username, length, specific }: ProjectProps) => {
   }, [fetchRepos]);
 
   return (
-    <div id="projects" className="bg-light m-0">
+    <div id="projects" className="projects-bg m-0">
       <div className="container py-5">
         <Container className="">
           <h2

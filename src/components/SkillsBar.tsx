@@ -13,7 +13,7 @@ function SkillsBar({ skill, image }: Props) {
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <img alt="" src={image} className="responsive-img" height="100" />
-      <div>{skill}</div>
+      <div className="skill-text">{skill}</div>
       <br />
     </div>
   );

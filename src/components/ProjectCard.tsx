@@ -16,14 +16,14 @@ const ProjectCard = ({ value, id }: { value: any; id: string }) => {
 
   return (
     <Col md={6}>
-      <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
-        <Card.Body>
+      <Card className="card shadow-lg p-3 mb-5 project-card-bg rounded">
+        <Card.Body style={{ backgroundColor: "#111630" }}>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
           <Card.Text>
             {!description ? "" : description || <Skeleton count={3} />}
           </Card.Text>
           {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
-          <hr />
+          <hr className="project-card-line" />
           {languages_url ? (
             <Language languages_url={languages_url} repo_url={svn_url} />
           ) : (
@@ -51,14 +51,15 @@ const CardButtons = ({ svn_url }: { svn_url: string }) => {
         href={`${svn_url}/archive/master.zip`}
         className="btn btn-outline-secondary mx-2"
       >
-        <i className="fab fa-github" /> Download Project
+        <i className="fab fa-github" style={{ color: "white" }} /> Download
+        Project
       </a>
       <a
         href={svn_url}
         target="_blank"
         className="btn btn-outline-secondary mx-2"
       >
-        <i className="fab fa-github" /> Repo
+        <i className="fab fa-github" style={{ color: "white" }} /> Repo
       </a>
     </div>
   );
@@ -95,24 +96,24 @@ const Language = ({
 
   return (
     <div className="pb-3">
-      Languages:{" "}
-      {array.length
-        ? array.map((language) => (
-            <a
-              key={language}
-              className="card-link"
-              href={repo_url + `/search?l=${language}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="badge bg-light text-dark">
-                {language}:{" "}
-                {Math.trunc((data[language as any] / total_count) * 1000) / 10}{" "}
-                %
-              </span>
-            </a>
-          ))
-        : "code yet to be deployed."}
+      {array.length ? (
+        array.map((language) => (
+          <a
+            key={language}
+            className="card-link"
+            href={repo_url + `/search?l=${language}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="badge">
+              {language}:{" "}
+              {Math.trunc((data[language as any] / total_count) * 1000) / 10} %
+            </span>
+          </a>
+        ))
+      ) : (
+        <span>No languages to be found."</span>
+      )}
     </div>
   );
 };
@@ -161,10 +162,15 @@ const CardFooter = ({
         className="text-dark text-decoration-none"
       >
         <span className="text-dark card-link mr-4">
-          <i className="fas fa-star" /> Stars&nbsp;{star_count}
+          <i className="fas fa-star" style={{ color: "white" }} />
+          <span className="stars">&nbsp;Stars&nbsp;{star_count}</span>
         </span>
       </a>
-      <small className="text-muted">&nbsp;Updated {updated_at}</small>
+      <small className="text-muted">
+        <span className="project-card-updated">
+          &nbsp;&nbsp;Updated {updated_at}
+        </span>
+      </small>
     </p>
   );
 };
