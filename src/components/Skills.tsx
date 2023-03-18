@@ -14,7 +14,10 @@ interface Props {
 }
 
 const Skills = React.forwardRef(
-  ({ heading, languages, librariesFrameworks, otherSkills }: Props, ref) => {
+  (
+    { heading, languages, librariesFrameworks, otherSkills }: Props,
+    _cleref
+  ) => {
     const skillsTabRef = React.useRef(null);
     const [isScrolled, setIsScrolled] = React.useState(false);
 
