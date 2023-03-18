@@ -52,7 +52,7 @@ const Home = React.forwardRef<any, any>((_, ref) => {
 const App = () => {
   const titleRef = React.useRef<HTMLDivElement>(null);
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
       {/* <BrowserRouter basename=""> */}
       <Navbar />
       <Routes>

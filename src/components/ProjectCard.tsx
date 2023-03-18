@@ -19,7 +19,7 @@ const ProjectCard = ({ value }: { value: any; id: string }) => {
       <Card className="card shadow-lg p-3 mb-5 project-card-bg rounded">
         <Card.Body style={{ backgroundColor: "#111630" }}>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
-          <Card.Text>
+          <Card.Text style={{ color: "white" }}>
             {!description ? "" : description || <Skeleton count={3} />}
           </Card.Text>
           {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
