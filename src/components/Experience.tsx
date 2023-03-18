@@ -37,7 +37,7 @@ function Experience({ heading, experienceList }: ExperienceProps) {
           <Box
             sx={{
               width: "80%",
-              height: "200%",
+              height: "100%",
               alignItems: "center",
               justifyContent: "center",
               margin: "auto",
@@ -45,7 +45,7 @@ function Experience({ heading, experienceList }: ExperienceProps) {
               bgcolor: "background.paper",
               display: "flex",
               flexDirection: "row",
-              backgroundColor: "#111630",
+              backgroundColor: "#191d30",
             }}
           >
             <Tabs
