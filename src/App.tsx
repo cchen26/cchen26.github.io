@@ -15,7 +15,7 @@ import skills from "./assets/skills.json";
 import intro from "./assets/intro.json";
 import experience from "./assets/experience.json";
 
-const Home = React.forwardRef<any, any>((props, ref) => {
+const Home = React.forwardRef<any, any>((_, ref) => {
   return (
     <>
       <Intro
@@ -52,8 +52,8 @@ const Home = React.forwardRef<any, any>((props, ref) => {
 const App = () => {
   const titleRef = React.useRef<HTMLDivElement>(null);
   return (
-    // <BrowserRouter basename={`${process.env["PUBLIC_URL"]}/`}>
-    <BrowserRouter basename="">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      {/* <BrowserRouter basename=""> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home ref={titleRef} />} />

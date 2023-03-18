@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Skeleton from "react-loading-skeleton";
 import axios from "axios";
 
-const ProjectCard = ({ value, id }: { value: any; id: string }) => {
+const ProjectCard = ({ value }: { value: any; id: string }) => {
   const {
     name,
     description,
