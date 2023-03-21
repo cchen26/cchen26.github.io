@@ -23,7 +23,12 @@
   background-color: #172a45;
 }
 
-.section__Jobs-buttonCompany:hover,
+.section__Jobs-buttonCompany:hover {
+  color: #dca652;
+  outline: 0px;
+  border-color: #dca652;
+  transform: translateY(-3px);
+}
 .section__Jobs-buttonCompany:active,
 .section__Jobs-buttonCompany:focus {
   color: #dca652;
