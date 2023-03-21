@@ -1,0 +1,45 @@
+.experience-bg {
+  background-color: #191d30;
+}
+
+.section__Jobs-container {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  /* add your other styles here */
+
+  /* animate the scrollbar */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    animation: scrollAnimation 1s infinite alternate;
+  }
+
+  /* define the animation */
+  @keyframes scrollAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+  }
+}
+
+.section__Jobs-styledTabList {
+  max-width: 130px;
+  padding: 0;
+}
+
+@media only screen and (max-width: 575px) {
+  .section__Jobs-VerticalTabRow {
+    margin-top: 10px;
+  }
+
+  .section__Jobs-styledTabList {
+    display: flex;
+    flex-direction: row;
+  }
+}

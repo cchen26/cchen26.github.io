@@ -15,12 +15,11 @@ const dummyProject = {
 const API = "https://api.github.com";
 
 interface ProjectProps {
-  heading: string;
   username: string;
   length: number;
   specific: string[];
 }
-const Project = ({ heading, username, length, specific }: ProjectProps) => {
+const Project = ({ username, length, specific }: ProjectProps) => {
   const allReposAPI = `${API}/users/${username}/repos?sort=updated&direction=desc`;
   const specificReposAPI = `${API}/repos/${username}`;
   const dummyProjectsArr = new Array(length + specific.length).fill(
@@ -60,7 +59,7 @@ const Project = ({ heading, username, length, specific }: ProjectProps) => {
             className="display-4 pb-5 text-center"
             style={{ fontFamily: "Ubuntu, sans-serif" }}
           >
-            {heading}
+            Projects
           </h2>
           <Row>
             {projectsArray.length

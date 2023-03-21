@@ -7,17 +7,13 @@ import { Container } from "react-bootstrap";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 
 interface Props {
-  heading: string;
   languages: { name: string; image: string }[];
   librariesFrameworks: { name: string; image: string }[];
   otherSkills: { name: string; image: string }[];
 }
 
 const Skills = React.forwardRef(
-  (
-    { heading, languages, librariesFrameworks, otherSkills }: Props,
-    _cleref
-  ) => {
+  ({ languages, librariesFrameworks, otherSkills }: Props, _cleref) => {
     const skillsTabRef = React.useRef(null);
     const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -37,14 +33,14 @@ const Skills = React.forwardRef(
               className="display-4 pb-5 text-center"
               style={{ fontFamily: "Ubuntu, sans-serif" }}
             >
-              {heading}
+              Skills
             </h2>
             <Tabs
               className="skills-tabs"
               defaultActiveKey="languages-skills"
               id="skills-tabs"
               fill
-              style={{ fontFamily: "Ubuntu, sans-serif" }}
+              style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
             >
               <Tab
                 tabClassName="skills-tab lead"

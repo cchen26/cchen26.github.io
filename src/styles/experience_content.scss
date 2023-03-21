@@ -1,0 +1,40 @@
+.section__Jobs-styledContent {
+  font-family: sans-serif;
+  text-align: left;
+  color: white;
+}
+
+.section__Jobs-styledContent h4 {
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+//ccd6f6 gray
+.section__Jobs-styledContent h5 {
+  font-size: 13px;
+  font-family: "Roboto Mono", monospace;
+  letter-spacing: 0.05em;
+  margin-bottom: 30px;
+  color: #dca652;
+}
+//#64ffda //teal
+
+.section__Jobs-styledContent ul {
+  padding-inline-start: 10px;
+  list-style: none;
+}
+
+.section__Jobs-styledContent li {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+  padding-left: 15px;
+}
+
+.section__Jobs-styledContent li::before {
+  content: "▹";
+  color: #dca652;
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1.5em;
+}

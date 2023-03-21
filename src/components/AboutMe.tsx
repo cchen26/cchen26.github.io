@@ -1,12 +1,6 @@
 import React from "react";
 
-type AboutMeProps = {
-  heading: string;
-  message: string;
-  email: string;
-};
-
-const AboutMe: React.FC<AboutMeProps> = ({ heading, message, email }) => {
+const AboutMe: React.FC = () => {
   return (
     <div id="about-me" className="about-me-bg m-0">
       <div className="container py-5">
@@ -17,12 +11,20 @@ const AboutMe: React.FC<AboutMeProps> = ({ heading, message, email }) => {
               className="display-4 mb-5 text-center"
               style={{ fontFamily: "Ubuntu, sans-serif" }}
             >
-              {heading}
+              About Me
             </h2>
-            <p className="lead text-center">{message}</p>
+            <p
+              className="lead text-center"
+              style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
+            >
+              I am an aspiring Junior Software Engineer with a passion for
+              learning and experimenting with new technologies. I have a
+              preference towards frontend frameworks, especially React, but I am
+              open to any opportunities.
+            </p>
             <div style={{ textAlign: "center" }}>
               <a
-                href={`mailto:${email}`}
+                href={`mailto:chaochen234@gmail.com`}
                 className="btn btn-outline-dark btn-lg"
                 aria-label="Contact"
               >

@@ -1,115 +1,68 @@
 import React, { useState } from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import { TabContainer } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import ExperienceList from "./ExperienceList";
+import ExperienceContent from "./ExperienceContent";
+import "../styles/experience.scss";
 
-interface ExperienceData {
-  company: string;
-  role: string;
-  date: string;
-  description: string[];
+interface ExperienceDataProps {
+  data: {
+    expData: {
+      company: string;
+      position: string;
+      period: string;
+      details: string[];
+    };
+  }[];
 }
 
-interface ExperienceProps {
-  heading: string;
-  experienceList: ExperienceData[];
-}
+const Experience: React.FC<ExperienceDataProps> = (props) => {
+  const [activeTabId, setActiveTabId] = useState(0);
 
-function Experience({ heading, experienceList }: ExperienceProps) {
-  const [value, setValue] = useState(0);
-
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
+  const btnClick = (id: number) => {
+    setActiveTabId(id);
   };
 
   return (
     <div id="experience" className="experience-bg m-0">
-      <div className="container py-5">
-        <h2
-          className="display-4 mb-5 text-center"
-          style={{ fontFamily: "Ubuntu, sans-serif" }}
-        >
-          {heading}
-        </h2>
-        <TabContainer>
-          <Box
-            sx={{
-              width: "80%",
-              height: "100%",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "auto",
-              flexGrow: 1,
-              bgcolor: "background.paper",
-              display: "flex",
-              flexDirection: "row",
-              backgroundColor: "#191d30",
-            }}
+      <Container className="section__Jobs-container">
+        <div className="container py-5">
+          <h2
+            className="display-4 mb-5 text-center"
+            style={{ fontFamily: "Ubuntu, sans-serif" }}
           >
-            <Tabs
-              orientation="vertical"
-              variant="scrollable"
-              scrollButtons="auto"
-              value={value}
-              onChange={handleChange}
-              aria-label="Vertical tabs"
-              sx={{ borderRight: 1, borderColor: "divider" }}
-            >
-              {experienceList.map((data, index) => {
-                return (
-                  <Tab
-                    label={data.company}
-                    id={`vertical-tab-${index}`}
-                    aria-controls={`vertical-tabpanel-${index}`}
-                    key={index}
-                    style={{ color: "#dca652" }}
-                  />
-                );
-              })}
-            </Tabs>
-            {experienceList.map((data, index) => {
-              return (
-                value === index && (
-                  <div
-                    role="tabpanel"
-                    hidden={value !== index}
-                    id={`vertical-tabpanel-${index}`}
-                    aria-labelledby={`vertical-tab-${index}`}
-                    key={index}
-                    style={{ color: "#fff", marginLeft: "10px" }}
-                  >
-                    {value === index && (
-                      <Box sx={{ p: 4 }}>
-                        <Typography>
-                          <div
-                            style={{ fontSize: "20px", marginBottom: "2px" }}
-                          >
-                            <strong>{data.company}</strong> - {data.role}
-                          </div>
-                          <div
-                            style={{ fontSize: "14px", marginBottom: "13px" }}
-                          >
-                            {data.date}
-                          </div>
-                          <ul>
-                            {data.description.map((data, index) => (
-                              <li key={index}>{data}</li>
-                            ))}
-                          </ul>
-                        </Typography>
-                      </Box>
-                    )}
-                  </div>
-                )
-              );
-            })}
-          </Box>
-        </TabContainer>
-      </div>
+            Experience
+          </h2>
+          <Row>
+            <Col sm="3">
+              <div className="section__Jobs-styledTab">
+                <ul className="section__Jobs-styledTabList">
+                  {props.data.map((job, index) => (
+                    <ExperienceList
+                      key={index}
+                      onClick={btnClick}
+                      data={job}
+                      index={index}
+                      activeTabId={activeTabId}
+                    />
+                  ))}
+                </ul>
+              </div>
+            </Col>
+            <Col sm="9">
+              {props.data.map((job, index) => (
+                <ExperienceContent
+                  data={job}
+                  key={index}
+                  index={index}
+                  activeTabId={activeTabId}
+                />
+              ))}
+            </Col>
+          </Row>
+        </div>
+      </Container>
     </div>
   );
-}
+};
 
 export default Experience;

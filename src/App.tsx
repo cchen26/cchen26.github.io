@@ -8,43 +8,29 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Projects from "./components/Project";
+
+//import VerticalTab from "./components/Experience";
+import { intro, skills, experienceData, repos } from "./assets/Configurable.js";
+
 //assets
-import aboutme from "./assets/aboutme.json";
-import repos from "./assets/repos.json";
-import skills from "./assets/skills.json";
-import intro from "./assets/intro.json";
-import experience from "./assets/experience.json";
 
 const Home = React.forwardRef<any, any>((_, ref) => {
   return (
     <>
-      <Intro
-        name={`${intro.firstName} ${intro.lastName}`}
-        message={intro.message}
-        icons={intro.icons}
-        ref={ref}
-      />
+      <Intro icons={intro.socials} ref={ref} />
       <Skills
-        heading={skills.heading}
         languages={skills.languages}
         librariesFrameworks={skills.librariesFrameworks}
         otherSkills={skills.otherSkills}
       />
-      <Experience
-        heading={experience.heading}
-        experienceList={experience.data}
-      />
+      {/* <Experience experienceList={experience.data} /> */}
+      <Experience data={experienceData.jobs} />
       <Projects
-        heading={repos.heading}
         username={repos.gitHubUsername}
         length={repos.reposLength}
         specific={repos.specificRepos}
       />
-      <AboutMe
-        heading={aboutme.heading}
-        message={aboutme.message}
-        email={aboutme.email}
-      />
+      <AboutMe />
     </>
   );
 });
@@ -52,8 +38,8 @@ const Home = React.forwardRef<any, any>((_, ref) => {
 const App = () => {
   const titleRef = React.useRef<HTMLDivElement>(null);
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
-      {/* <BrowserRouter basename=""> */}
+    // <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
+    <BrowserRouter basename="">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home ref={titleRef} />} />
