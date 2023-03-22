@@ -14,7 +14,7 @@
   width: 100%;
   text-align: left;
   padding: 0 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   transform: translateY(0);
 }
 
