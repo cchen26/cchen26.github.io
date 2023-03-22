@@ -73,7 +73,7 @@ const experienceData = {
   jobs: [
     {
       expData: {
-        company: "Company1",
+        company: "Freelance",
         position: "Software Engineer",
         period: "Oct 2018 - present",
         details: [
@@ -84,7 +84,7 @@ const experienceData = {
     },
     {
       expData: {
-        company: "Company2",
+        company: "ABC",
         position: "Software Developer",
         period: "Oct 2016 - May 2018",
         details: [
@@ -95,7 +95,7 @@ const experienceData = {
     },
     {
       expData: {
-        company: "Company3",
+        company: "C3",
         position: "Engineer",
         period: "Mar 2016 - Oct 2016",
         details: [
