@@ -6,12 +6,10 @@ import "../styles/experience.scss";
 
 interface ExperienceDataProps {
   data: {
-    expData: {
-      company: string;
-      position: string;
-      period: string;
-      details: string[];
-    };
+    company: string;
+    position: string;
+    period: string;
+    details: string[];
   }[];
 }
 

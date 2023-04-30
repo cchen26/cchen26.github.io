@@ -3,18 +3,17 @@ import "../styles/experience_content.scss";
 
 interface Props {
   data: {
-    expData: {
-      position: string;
-      period: string;
-      details: string[];
-    };
+    company: string;
+    position: string;
+    period: string;
+    details: string[];
   };
   index: number;
   activeTabId: number;
 }
 
 const ExperienceContent: React.FC<Props> = (props) => {
-  let data = props.data.expData;
+  let data = props.data;
 
   return (
     <div

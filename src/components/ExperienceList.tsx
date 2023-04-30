@@ -5,9 +5,10 @@ type Props = {
   index: number;
   activeTabId: number;
   data: {
-    expData: {
-      company: string;
-    };
+    company: string;
+    position: string;
+    period: string;
+    details: string[];
   };
   onClick: (id: number) => void;
 };
@@ -28,7 +29,7 @@ const ExperienceList: FC<Props> = (props) => {
             : { color: "#8892b0" }
         }
       >
-        {props.data.expData.company}
+        {props.data.company}
       </button>
     </li>
   );
