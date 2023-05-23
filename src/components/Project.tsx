@@ -26,22 +26,21 @@ const Project = ({ username, length, specific }: ProjectProps) => {
     dummyProject
   );
 
-  const [projectsArray, setProjectsArray] = useState<typeof dummyProject[]>([]);
+  const [projectsArray, setProjectsArray] = useState<(typeof dummyProject)[]>(
+    []
+  );
 
   const fetchRepos = useCallback(async () => {
-    let repoList = [];
     try {
       const response = await axios.get(allReposAPI);
-      repoList = [...response.data.slice(0, length)];
-      try {
-        for (let repoName of specific) {
+      const repoList = response.data.slice(0, length);
+      const specificRepos = await Promise.all(
+        specific.map(async (repoName) => {
           const response = await axios.get(`${specificReposAPI}/${repoName}`);
-          repoList.push(response.data);
-        }
-      } catch (error: any) {
-        console.error(error.message);
-      }
-      setProjectsArray(repoList);
+          return response.data;
+        })
+      );
+      setProjectsArray([...repoList, ...specificRepos]);
     } catch (error: any) {
       console.error(error.message);
     }

@@ -104,8 +104,8 @@ const experienceData = {
 
 const repos = {
   gitHubUsername: "cchen26",
-  reposLength: 1,
-  specificRepos: [],
+  reposLength: 0,
+  specificRepos: ["Connectify", "cchen26.github.io"],
 };
 
 export { intro, skills, experienceData, repos };
